@@ -1,0 +1,140 @@
+import Link from 'next/link'
+import ProductCard from '@/components/ProductCard'
+import { ProductImage } from '@/components/ProductImage'
+import { newArrivals, bestsellers, blogPosts } from '@/lib/products'
+
+export default function HomePage() {
+  return (
+    <>
+      {/* ── Hero ── */}
+      <section className="relative h-[90vh] min-h-[600px] overflow-hidden">
+        <ProductImage name="La Belle Époque" colour="blush" className="absolute inset-0" />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%)' }} />
+        {/* Hero copy */}
+        <div className="absolute bottom-0 left-0 right-0 p-12 md:p-20 text-white">
+          <p className="text-label text-[9px] tracking-widest text-white/70 mb-3">New Collection</p>
+          <h1 className="font-display text-5xl md:text-7xl font-medium leading-[1.05] mb-2">
+            Fall <em>in love</em><br />with lace
+          </h1>
+          <p className="text-body-sm text-white/70 mt-3 mb-7 max-w-sm">
+            La Belle Époque — an ode to Parisian sensuality, crafted in the finest French Chantilly lace.
+          </p>
+          <Link href="/lingerie" className="btn-outline-white">Shop Lingerie</Link>
+        </div>
+      </section>
+
+      {/* ── Brand strip ── */}
+      <section className="py-10 px-8 text-center border-b border-[#e8e0dc]">
+        <p className="text-label text-[9px] text-[#8c7b7b] tracking-widest">
+          Free Shipping &nbsp;·&nbsp; Complimentary Gift Wrapping &nbsp;·&nbsp; Returns within 30 Days &nbsp;·&nbsp; Kensington Boutique Open Daily
+        </p>
+      </section>
+
+      {/* ── New Arrivals ── */}
+      <section className="py-20 px-8 md:px-16">
+        <div className="flex items-end justify-between mb-10">
+          <div>
+            <p className="text-label text-[9px] text-[#8c7b7b] mb-2">Just Arrived</p>
+            <h2 className="font-display text-3xl md:text-4xl">New Arrivals</h2>
+          </div>
+          <Link href="/new" className="text-label text-[9px] hover:opacity-60 transition-opacity">View All</Link>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {newArrivals.map(p => <ProductCard key={p.id} product={p} />)}
+        </div>
+      </section>
+
+      {/* ── Editorial split: Nightwear ── */}
+      <section className="grid md:grid-cols-2 min-h-[600px]">
+        <div className="relative overflow-hidden bg-[#faf7f5]">
+          <ProductImage name="Silk Robe" colour="ivory" className="absolute inset-0" />
+        </div>
+        <div className="bg-[#1a1a1a] text-white flex flex-col items-start justify-center p-14 md:p-20">
+          <p className="text-label text-[9px] text-[#e5c3c3] mb-4">Nightwear</p>
+          <h2 className="font-display text-4xl md:text-5xl font-medium leading-[1.1] mb-5">
+            The art of<br /><em>doing nothing</em>
+          </h2>
+          <p className="text-body-sm text-white/60 mb-8 max-w-xs leading-relaxed">
+            Pure silk robes, chemises and nightdresses for the mornings you want to last forever.
+          </p>
+          <Link href="/nightwear" className="btn-outline-white">Explore Nightwear</Link>
+        </div>
+      </section>
+
+      {/* ── Bestsellers ── */}
+      <section className="py-20 px-8 md:px-16 bg-[#faf7f5]">
+        <div className="text-center mb-12">
+          <p className="text-label text-[9px] text-[#8c7b7b] mb-2">Perennially Beloved</p>
+          <h2 className="font-display text-3xl md:text-4xl">The Favourites</h2>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {bestsellers.map(p => <ProductCard key={p.id} product={p} />)}
+        </div>
+      </section>
+
+      {/* ── Swim editorial ── */}
+      <section className="grid md:grid-cols-2 min-h-[500px]">
+        <div className="bg-[#faf7f5] flex flex-col items-start justify-center p-14 md:p-20 order-2 md:order-1">
+          <p className="text-label text-[9px] text-[#8c7b7b] mb-4">Swim</p>
+          <h2 className="font-display text-4xl font-medium leading-[1.1] mb-5">
+            Sun, <em>sea</em><br />and Italian Lycra
+          </h2>
+          <p className="text-body-sm text-[#8c7b7b] mb-8 max-w-xs leading-relaxed">
+            Minimalist swimwear with the same attention to fit and fabric that defines all of Lucille.
+          </p>
+          <Link href="/swim" className="btn-outline">Shop Swim</Link>
+        </div>
+        <div className="relative overflow-hidden order-1 md:order-2 min-h-[350px]">
+          <ProductImage name="Halter Bikini" colour="sand" className="absolute inset-0" />
+        </div>
+      </section>
+
+      {/* ── Collection banner ── */}
+      <section className="relative py-28 px-8 text-center overflow-hidden bg-[#e5c3c3]">
+        <p className="text-label text-[9px] text-white/70 mb-3">Exclusive</p>
+        <h2 className="font-display text-4xl md:text-6xl font-medium text-[#1a1a1a] mb-4">
+          La Belle Époque
+        </h2>
+        <p className="text-body-sm text-[#1a1a1a]/70 mb-8 max-w-sm mx-auto">
+          Our most romantic collection to date. French lace, silk charmeuse and the timeless elegance of another era.
+        </p>
+        <Link href="/collection" className="btn-outline">Discover the Collection</Link>
+      </section>
+
+      {/* ── Edits / Blog ── */}
+      <section className="py-20 px-8 md:px-16">
+        <div className="flex items-end justify-between mb-10">
+          <div>
+            <p className="text-label text-[9px] text-[#8c7b7b] mb-2">The Lucille Edit</p>
+            <h2 className="font-display text-3xl md:text-4xl">Life, Beautifully Lived</h2>
+          </div>
+          <Link href="/edits" className="text-label text-[9px] hover:opacity-60 transition-opacity">Read All</Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {blogPosts.map(post => (
+            <Link key={post.id} href={`/edits/${post.slug}`} className="group">
+              <div className="aspect-[4/3] bg-[#faf7f5] overflow-hidden mb-4">
+                <ProductImage name={post.title} colour="blush"
+                  className="group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <p className="text-label text-[9px] text-[#e5c3c3] mb-2">{post.category}</p>
+              <h3 className="font-display text-lg leading-tight mb-1 group-hover:opacity-70 transition-opacity">{post.title}</h3>
+              <p className="text-body-sm text-[#8c7b7b] line-clamp-2">{post.excerpt}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Store locator ── */}
+      <section className="bg-[#1a1a1a] text-white py-16 px-8 text-center">
+        <p className="text-label text-[9px] text-[#e5c3c3] mb-3">Visit Us</p>
+        <h2 className="font-display text-3xl mb-2">Kensington Boutique</h2>
+        <p className="text-body-sm text-white/50 mb-1">12 Montpelier Walk, London W8 4HT</p>
+        <p className="text-body-sm text-white/50 mb-6">Mon–Sat 10–6 &nbsp;·&nbsp; Sun 11–5</p>
+        <Link href="/store" className="btn-outline-white">Get Directions</Link>
+      </section>
+    </>
+  )
+}
