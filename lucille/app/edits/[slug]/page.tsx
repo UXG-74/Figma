@@ -12,7 +12,7 @@ export default async function EditArticlePage({ params }: { params: Promise<{ sl
     <>
       {/* Hero */}
       <section className="relative h-[60vh] overflow-hidden">
-        <ProductImage name={post.title} colour="blush" className="absolute inset-0" />
+        <ProductImage name={post.title} colour="blush" className="absolute inset-0" src={post.photoUrl} />
         <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.4)' }} />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-8">
           <p className="text-label text-[9px] text-[#e5c3c3] mb-4">{post.category} · {post.date} · {post.readTime}</p>
@@ -44,7 +44,7 @@ export default async function EditArticlePage({ params }: { params: Promise<{ sl
           {blogPosts.filter(p => p.slug !== slug).slice(0, 3).map(p => (
             <Link key={p.id} href={`/edits/${p.slug}`} className="group">
               <div className="aspect-[4/3] overflow-hidden bg-[#faf7f5] mb-4">
-                <ProductImage name={p.title} colour="blush"
+                <ProductImage name={p.title} colour="blush" src={p.photoUrl}
                   className="group-hover:scale-105 transition-transform duration-700" />
               </div>
               <p className="text-label text-[9px] text-[#e5c3c3] mb-2">{p.category}</p>

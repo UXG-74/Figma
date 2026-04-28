@@ -11,7 +11,8 @@ export type Product = {
   details: string[]
   sizes: string[]
   colours: { name: string; hex: string }[]
-  images: string[] // placeholder gradient descriptions
+  images: string[]
+  photoUrl?: string
   collection?: string
 }
 
@@ -25,6 +26,7 @@ export type BlogPost = {
   readTime: string
   excerpt: string
   content: string
+  photoUrl?: string
 }
 
 export const products: Product[] = [
@@ -41,6 +43,7 @@ export const products: Product[] = [
     sizes: ['32A', '32B', '32C', '34A', '34B', '34C', '34D', '36B', '36C', '36D'],
     colours: [{ name: 'Blush', hex: '#e5c3c3' }, { name: 'Noir', hex: '#1a1a1a' }, { name: 'Ivory', hex: '#f5f0eb' }],
     images: ['blush-lace', 'noir-lace', 'ivory-lace'],
+    photoUrl: 'https://images.unsplash.com/photo-1770294758971-44fa1eae61a3?w=1200&auto=format&fit=crop&q=80',
     collection: 'La Belle Époque',
   },
   {
@@ -56,6 +59,7 @@ export const products: Product[] = [
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colours: [{ name: 'Blush', hex: '#e5c3c3' }, { name: 'Noir', hex: '#1a1a1a' }, { name: 'Champagne', hex: '#c8a96e' }],
     images: ['blush-brief'],
+    photoUrl: 'https://images.unsplash.com/photo-1750064144361-bc7d12be7a98?w=1200&auto=format&fit=crop&q=80',
     collection: 'La Belle Époque',
   },
   {
@@ -71,6 +75,7 @@ export const products: Product[] = [
     sizes: ['XS', 'S', 'M', 'L'],
     colours: [{ name: 'Blush', hex: '#e5c3c3' }, { name: 'Noir', hex: '#1a1a1a' }],
     images: ['blush-suspender'],
+    photoUrl: 'https://images.unsplash.com/photo-1606245455144-2243f0b4d97b?w=1200&auto=format&fit=crop&q=80',
     collection: 'La Belle Époque',
   },
   {
@@ -86,6 +91,7 @@ export const products: Product[] = [
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colours: [{ name: 'Ivory', hex: '#f5f0eb' }, { name: 'Blush', hex: '#e5c3c3' }, { name: 'Midnight', hex: '#2d2d3f' }],
     images: ['ivory-chemise'],
+    photoUrl: 'https://images.unsplash.com/photo-1770294759006-356f25f4f156?w=1200&auto=format&fit=crop&q=80',
   },
   {
     id: '5',
@@ -100,6 +106,7 @@ export const products: Product[] = [
     sizes: ['XS/S', 'M/L', 'XL/XXL'],
     colours: [{ name: 'Ivory', hex: '#f5f0eb' }, { name: 'Blush', hex: '#e5c3c3' }, { name: 'Stone', hex: '#9e9188' }],
     images: ['ivory-robe'],
+    photoUrl: 'https://images.unsplash.com/photo-1766056278976-87f269e3b69c?w=1200&auto=format&fit=crop&q=80',
   },
   {
     id: '6',
@@ -113,6 +120,7 @@ export const products: Product[] = [
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colours: [{ name: 'Ivory', hex: '#f5f0eb' }, { name: 'Noir', hex: '#1a1a1a' }],
     images: ['ivory-nightdress'],
+    photoUrl: 'https://images.unsplash.com/photo-1750064164897-093dc853c98a?w=1200&auto=format&fit=crop&q=80',
   },
   {
     id: '7',
@@ -127,6 +135,7 @@ export const products: Product[] = [
     sizes: ['XS', 'S', 'M', 'L'],
     colours: [{ name: 'Noir', hex: '#1a1a1a' }, { name: 'Blush', hex: '#e5c3c3' }, { name: 'Sand', hex: '#c4aa8a' }],
     images: ['noir-bikini'],
+    photoUrl: 'https://plus.unsplash.com/premium_photo-1677687190438-040daa5d5337?w=1200&auto=format&fit=crop&q=80',
   },
   {
     id: '8',
@@ -140,6 +149,7 @@ export const products: Product[] = [
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colours: [{ name: 'Noir', hex: '#1a1a1a' }, { name: 'Blush', hex: '#e5c3c3' }, { name: 'Sand', hex: '#c4aa8a' }],
     images: ['noir-brief-swim'],
+    photoUrl: 'https://images.unsplash.com/photo-1734292738994-3e5361c87227?w=1200&auto=format&fit=crop&q=80',
   },
   {
     id: '9',
@@ -167,6 +177,7 @@ export const products: Product[] = [
     sizes: ['One size'],
     colours: [{ name: 'Blush', hex: '#e5c3c3' }, { name: 'Noir', hex: '#1a1a1a' }, { name: 'Ivory', hex: '#f5f0eb' }],
     images: ['blush-sleep-mask'],
+    photoUrl: 'https://images.unsplash.com/photo-1607300110506-273ab1cf41f8?w=1200&auto=format&fit=crop&q=80',
   },
 ]
 
@@ -193,6 +204,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '5 min read',
     excerpt: 'From the corsets of the Belle Époque to the silk slips of the nineties, lingerie has always told the story of women\'s relationship with their own bodies.',
     content: 'Full article content here.',
+    photoUrl: 'https://plus.unsplash.com/premium_photo-1729004105169-5459b2e37344?w=1200&auto=format&fit=crop&q=80',
   },
   {
     id: '2',
@@ -215,6 +227,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '6 min read',
     excerpt: 'Silk is the ultimate luxury fabric — and the most misunderstood. Our guide to washing, storing and wearing silk for a lifetime.',
     content: 'Full article content here.',
+    photoUrl: 'https://images.unsplash.com/photo-1594631770635-f2915410b410?w=1200&auto=format&fit=crop&q=80',
   },
   {
     id: '4',
@@ -226,6 +239,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '3 min read',
     excerpt: 'Whether you\'re shopping for a milestone or simply because, our edit of the most giftable pieces from the Lucille collection.',
     content: 'Full article content here.',
+    photoUrl: 'https://images.unsplash.com/photo-1594632047623-f825a96296f6?w=1200&auto=format&fit=crop&q=80',
   },
 ]
 

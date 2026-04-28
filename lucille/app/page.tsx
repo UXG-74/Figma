@@ -51,7 +51,8 @@ export default function HomePage() {
       {/* ── Editorial split: Nightwear ── */}
       <section className="grid md:grid-cols-2 min-h-[600px]">
         <div className="relative overflow-hidden bg-[#faf7f5]">
-          <ProductImage name="Silk Robe" colour="ivory" className="absolute inset-0" />
+          <ProductImage name="Silk Robe" colour="ivory" className="absolute inset-0"
+            src="https://images.unsplash.com/photo-1770294758971-44fa1eae61a3?w=1200&auto=format&fit=crop&q=80" />
         </div>
         <div className="bg-[#1a1a1a] text-white flex flex-col items-start justify-center p-14 md:p-20">
           <p className="text-label text-[9px] text-[#e5c3c3] mb-4">Nightwear</p>
@@ -89,7 +90,8 @@ export default function HomePage() {
           <Link href="/swim" className="btn-outline">Shop Swim</Link>
         </div>
         <div className="relative overflow-hidden order-1 md:order-2 min-h-[350px]">
-          <ProductImage name="Halter Bikini" colour="sand" className="absolute inset-0" />
+          <ProductImage name="Halter Bikini" colour="sand" className="absolute inset-0"
+            src="https://plus.unsplash.com/premium_photo-1677687190438-040daa5d5337?w=1200&auto=format&fit=crop&q=80" />
         </div>
       </section>
 
@@ -118,7 +120,7 @@ export default function HomePage() {
           {blogPosts.map(post => (
             <Link key={post.id} href={`/edits/${post.slug}`} className="group">
               <div className="aspect-[4/3] bg-[#faf7f5] overflow-hidden mb-4">
-                <ProductImage name={post.title} colour="blush"
+                <ProductImage name={post.title} colour="blush" src={post.photoUrl}
                   className="group-hover:scale-105 transition-transform duration-700" />
               </div>
               <p className="text-label text-[9px] text-[#e5c3c3] mb-2">{post.category}</p>

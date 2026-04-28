@@ -1,4 +1,5 @@
-// Elegant gradient placeholder — replaces real product photography
+import Image from 'next/image'
+
 const gradients: Record<string, string> = {
   blush:     'linear-gradient(135deg, #f2e0e0 0%, #e5c3c3 50%, #c9a0a0 100%)',
   noir:      'linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 50%, #0d0d0d 100%)',
@@ -15,9 +16,18 @@ type Props = {
   colour?: string
   className?: string
   showLabel?: boolean
+  src?: string
 }
 
-export function ProductImage({ name, colour = 'blush', className = '', showLabel = false }: Props) {
+export function ProductImage({ name, colour = 'blush', className = '', showLabel = false, src }: Props) {
+  if (src) {
+    return (
+      <div className={`relative w-full h-full ${className}`}>
+        <Image src={src} alt={name} fill className="object-cover object-center" />
+      </div>
+    )
+  }
+
   const key = colour.toLowerCase().split(' ')[0]
   const gradient = gradients[key] ?? gradients.default
 

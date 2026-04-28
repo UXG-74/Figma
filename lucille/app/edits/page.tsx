@@ -21,7 +21,7 @@ export default function EditsPage() {
       {/* Featured */}
       <section className="grid md:grid-cols-2 min-h-[60vh]">
         <div className="relative overflow-hidden">
-          <ProductImage name={featured.title} colour="blush" className="absolute inset-0" />
+          <ProductImage name={featured.title} colour="blush" className="absolute inset-0" src={featured.photoUrl} />
         </div>
         <div className="flex flex-col justify-center p-12 md:p-16 bg-[#1a1a1a] text-white">
           <p className="text-label text-[9px] text-[#e5c3c3] mb-4">{featured.category} · {featured.date}</p>
@@ -38,7 +38,7 @@ export default function EditsPage() {
           {rest.map(post => (
             <Link key={post.id} href={`/edits/${post.slug}`} className="group">
               <div className="aspect-[4/3] overflow-hidden bg-[#faf7f5] mb-5">
-                <ProductImage name={post.title} colour="blush"
+                <ProductImage name={post.title} colour="blush" src={post.photoUrl}
                   className="group-hover:scale-105 transition-transform duration-700" />
               </div>
               <p className="text-label text-[9px] text-[#e5c3c3] mb-2">{post.category} · {post.date}</p>
