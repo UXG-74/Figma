@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import ProductCard from '@/components/ProductCard'
 import { ProductImage } from '@/components/ProductImage'
 import { newArrivals, bestsellers, blogPosts } from '@/lib/products'
@@ -8,7 +9,8 @@ export default function HomePage() {
     <>
       {/* ── Hero ── */}
       <section className="relative h-[90vh] min-h-[600px] overflow-hidden">
-        <ProductImage name="La Belle Époque" colour="blush" className="absolute inset-0" />
+        <Image src="/homepage.png" alt="Lucille London — La Belle Époque" fill
+          className="object-cover object-center" priority />
         {/* Gradient overlay */}
         <div className="absolute inset-0"
           style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%)' }} />
