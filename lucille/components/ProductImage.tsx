@@ -23,7 +23,7 @@ type Props = {
 export function ProductImage({ name, colour = 'blush', className = '', showLabel = false, src, objectFit = 'cover' }: Props) {
   if (src) {
     return (
-      <div className={`relative w-full h-full ${className}`}>
+      <div className={`absolute inset-0 ${className}`}>
         <Image src={src} alt={name} fill className={`${objectFit === 'contain' ? 'object-contain' : 'object-cover'} object-center`} />
       </div>
     )
