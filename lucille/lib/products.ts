@@ -210,8 +210,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '2',
-    slug: 'inside-kensington',
-    title: 'Inside Kensington',
+    slug: 'inside-lucille-london',
+    title: 'Inside Lucille London',
     subtitle: 'A morning with our founder in London\'s most refined neighbourhood',
     category: 'Life',
     date: 'March 2026',
