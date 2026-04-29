@@ -103,7 +103,7 @@ export default function StorePage() {
       <section className="grid grid-cols-2">
         <div className="relative h-[50vh] md:h-[65vh]">
           <Image
-            src="/Street%201.png"
+            src="/Signage1.png"
             alt="91 Pelham Street, Knightsbridge"
             fill
             className="object-cover object-center"
@@ -111,7 +111,7 @@ export default function StorePage() {
         </div>
         <div className="relative h-[50vh] md:h-[65vh]">
           <Image
-            src="/Street%202.png"
+            src="/Signage2.png"
             alt="Lucille London exterior"
             fill
             className="object-cover object-left"
