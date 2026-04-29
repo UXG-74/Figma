@@ -219,6 +219,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '4 min read',
     excerpt: 'Kensington at dawn has a particular quality of light — silvery, hushed, expectant. We spent a morning with Lucille\'s founder to understand how place shapes design.',
     content: 'Full article content here.',
+    photoUrl: '/store1.png',
   },
   {
     id: '3',
