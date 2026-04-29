@@ -120,7 +120,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {blogPosts.map(post => (
             <Link key={post.id} href={`/edits/${post.slug}`} className="group">
-              <div className="aspect-[4/3] bg-[var(--c-bg-soft)] overflow-hidden mb-4">
+              <div className="relative aspect-[4/3] bg-[var(--c-bg-soft)] overflow-hidden mb-4">
                 <ProductImage name={post.title} colour="blush" src={post.photoUrl}
                   className="group-hover:scale-105 transition-transform duration-700" />
               </div>

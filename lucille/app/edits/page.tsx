@@ -37,7 +37,7 @@ export default function EditsPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {rest.map(post => (
             <Link key={post.id} href={`/edits/${post.slug}`} className="group">
-              <div className="aspect-[4/3] overflow-hidden bg-[var(--c-bg-soft)] mb-5">
+              <div className="relative aspect-[4/3] overflow-hidden bg-[var(--c-bg-soft)] mb-5">
                 <ProductImage name={post.title} colour="blush" src={post.photoUrl}
                   className="group-hover:scale-105 transition-transform duration-700" />
               </div>
