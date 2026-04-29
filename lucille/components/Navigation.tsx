@@ -26,9 +26,9 @@ export default function Navigation() {
 
   return (
     <nav className={`sticky top-0 z-40 bg-white transition-shadow duration-300 ${scrolled ? 'shadow-sm' : ''}`}>
-      <div className="flex flex-col items-center pt-4 pb-0 px-8">
+      <div className="flex flex-col items-center pt-6 pb-0 px-8">
         {/* Top row: utility icons */}
-        <div className="w-full flex items-center justify-between mb-2">
+        <div className="w-full flex items-center justify-between mb-6">
           {/* Search */}
           <button className="p-2 opacity-60 hover:opacity-100 transition-opacity" aria-label="Search">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
