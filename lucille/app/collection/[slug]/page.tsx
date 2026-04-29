@@ -48,7 +48,7 @@ export default function ProductPage() {
         {/* Images */}
         <div className="grid grid-cols-2 gap-1 bg-[#faf7f5] p-1">
           {[0, 1].map(i => (
-            <div key={i} className="aspect-[3/4] overflow-hidden">
+            <div key={i} className="relative aspect-[3/4] overflow-hidden">
               <ProductImage name={product.name}
                 colour={product.colours[i]?.name ?? product.colours[0].name} />
             </div>

@@ -43,7 +43,7 @@ export default async function EditArticlePage({ params }: { params: Promise<{ sl
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {blogPosts.filter(p => p.slug !== slug).slice(0, 3).map(p => (
             <Link key={p.id} href={`/edits/${p.slug}`} className="group">
-              <div className="aspect-[4/3] overflow-hidden bg-[var(--c-bg-soft)] mb-4">
+              <div className="relative aspect-[4/3] overflow-hidden bg-[var(--c-bg-soft)] mb-4">
                 <ProductImage name={p.title} colour="blush" src={p.photoUrl}
                   className="group-hover:scale-105 transition-transform duration-700" />
               </div>

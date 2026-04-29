@@ -310,7 +310,7 @@ export default function CheckoutPage() {
               <div key={`${item.product.id}-${item.size}-${item.colour}`}
                 className="flex gap-4">
                 <div className="w-16 h-20 shrink-0 relative">
-                  <div className="w-full h-full overflow-hidden">
+                  <div className="relative w-full h-full overflow-hidden">
                     <ProductImage name={item.product.name} colour={item.colour} />
                   </div>
                   <span className="absolute -top-2 -right-2 bg-[#8c7b7b] text-white text-[9px] w-5 h-5 rounded-full flex items-center justify-center font-bold">
