@@ -67,7 +67,7 @@ export default function StorePage() {
       <section className="grid md:grid-cols-2 min-h-[480px]">
         <div className="relative overflow-hidden min-h-[380px] order-2 md:order-1">
           <Image
-            src="/store3.png"
+            src="/3.png"
             alt="Lucille London collection"
             fill
             className="object-cover object-center"
