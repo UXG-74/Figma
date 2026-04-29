@@ -17,13 +17,14 @@ type Props = {
   className?: string
   showLabel?: boolean
   src?: string
+  objectFit?: 'cover' | 'contain'
 }
 
-export function ProductImage({ name, colour = 'blush', className = '', showLabel = false, src }: Props) {
+export function ProductImage({ name, colour = 'blush', className = '', showLabel = false, src, objectFit = 'cover' }: Props) {
   if (src) {
     return (
       <div className={`relative w-full h-full ${className}`}>
-        <Image src={src} alt={name} fill className="object-cover object-center" />
+        <Image src={src} alt={name} fill className={`${objectFit === 'contain' ? 'object-contain' : 'object-cover'} object-center`} />
       </div>
     )
   }

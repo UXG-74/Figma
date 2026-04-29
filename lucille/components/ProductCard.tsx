@@ -21,6 +21,7 @@ export default function ProductCard({ product }: { product: Product }) {
             name={product.name}
             colour={hovered && product.colours[1] ? product.colours[1].name : defaultColour}
             src={product.photoUrl}
+            objectFit={product.photoObjectFit}
             className="transition-transform duration-700 group-hover:scale-105"
           />
           {/* Badges */}

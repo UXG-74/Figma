@@ -13,6 +13,7 @@ export type Product = {
   colours: { name: string; hex: string }[]
   images: string[]
   photoUrl?: string
+  photoObjectFit?: 'cover' | 'contain'
   collection?: string
 }
 
@@ -163,6 +164,8 @@ export const products: Product[] = [
     sizes: ['£50', '£100', '£150', '£250', '£500'],
     colours: [{ name: 'Blush', hex: '#e5c3c3' }],
     images: ['gift-card'],
+    photoUrl: '/giftbox.png',
+    photoObjectFit: 'contain',
   },
   {
     id: '10',
