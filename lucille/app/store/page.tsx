@@ -9,12 +9,12 @@ export default function StorePage() {
     <>
       {/* ── Intro — above the image ── */}
       <section className="max-w-2xl mx-auto px-8 pt-20 pb-14 text-center">
-        <p className="text-label text-[9px] text-[#e5c3c3] mb-5">Kensington Road, Knightsbridge</p>
+        <p className="text-label text-[9px] text-[#e5c3c3] mb-5">91 Pelham Street, Knightsbridge</p>
         <h1 className="font-display text-5xl md:text-6xl font-medium leading-tight mb-8">
           Lucille London
         </h1>
         <p className="text-body-sm text-[var(--c-text-muted)] leading-relaxed max-w-xl mx-auto">
-          Nestled on Kensington Road in Knightsbridge, Lucille London invites you into a world of quiet
+          Nestled on Pelham Street in Knightsbridge, Lucille London invites you into a world of quiet
           elegance and considered beauty. Every detail — from the soft blush tones to the delicate
           finishes — has been curated to elevate the everyday into something extraordinary.
         </p>
@@ -104,7 +104,7 @@ export default function StorePage() {
         <div className="relative h-[50vh] md:h-[65vh]">
           <Image
             src="/Street%201.png"
-            alt="Kensington Road, Knightsbridge"
+            alt="91 Pelham Street, Knightsbridge"
             fill
             className="object-cover object-center"
           />

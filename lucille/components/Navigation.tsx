@@ -141,7 +141,7 @@ export default function Navigation() {
               className="text-label text-[10px] text-[var(--c-text-muted)] hover:opacity-60 transition-opacity block mb-3">
               Store
             </Link>
-            <p className="text-body-sm text-[var(--c-text-muted)]">Kensington Road, Knightsbridge</p>
+            <p className="text-body-sm text-[var(--c-text-muted)]">91 Pelham Street, Knightsbridge</p>
           </div>
         </div>
       )}
