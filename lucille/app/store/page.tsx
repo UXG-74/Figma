@@ -99,24 +99,6 @@ export default function StorePage() {
         />
       </section>
 
-      {/* ── Hours & Info strip ── */}
-      <section className="py-16 px-8 border-y border-[var(--c-border)]">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-          <div>
-            <p className="text-label text-[9px] text-[#e5c3c3] mb-3">Address</p>
-            <p className="text-body-sm text-[var(--c-text-muted)]">Kensington Road<br />Knightsbridge, London</p>
-          </div>
-          <div>
-            <p className="text-label text-[9px] text-[#e5c3c3] mb-3">Hours</p>
-            <p className="text-body-sm text-[var(--c-text-muted)]">Mon – Sat &nbsp; 10:00 – 18:00<br />Sunday &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11:00 – 17:00</p>
-          </div>
-          <div>
-            <p className="text-label text-[9px] text-[#e5c3c3] mb-3">Contact</p>
-            <p className="text-body-sm text-[var(--c-text-muted)]">boutique@lucillelondon.com</p>
-          </div>
-        </div>
-      </section>
-
       {/* ── Map CTA ── */}
       <StoreSection />
     </>
