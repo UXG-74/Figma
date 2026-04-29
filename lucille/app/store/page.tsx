@@ -26,7 +26,7 @@ export default function StorePage() {
       {/* ── Store image ── */}
       <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
         <Image
-          src="/IMG_%201529.jpg"
+          src="/store1.png"
           alt="Lucille London boutique interior"
           fill
           className="object-cover object-center"
@@ -55,7 +55,7 @@ export default function StorePage() {
         </div>
         <div className="relative overflow-hidden min-h-[380px]">
           <Image
-            src="/IMG_%201747.jpg"
+            src="/store2.png"
             alt="Inside Lucille London"
             fill
             className="object-cover object-center"
@@ -67,7 +67,7 @@ export default function StorePage() {
       <section className="grid md:grid-cols-2 min-h-[480px]">
         <div className="relative overflow-hidden min-h-[380px] order-2 md:order-1">
           <Image
-            src="/SHOT_04_317LH.jpg"
+            src="/store3.png"
             alt="Lucille London collection"
             fill
             className="object-cover object-center"
@@ -87,6 +87,16 @@ export default function StorePage() {
             Luxury, in its most intimate form.
           </p>
         </div>
+      </section>
+
+      {/* ── store4 image ── */}
+      <section className="relative w-full h-[50vh] md:h-[65vh] overflow-hidden">
+        <Image
+          src="/store4.png"
+          alt="Lucille London boutique detail"
+          fill
+          className="object-cover object-center"
+        />
       </section>
 
       {/* ── Hours & Info strip ── */}
