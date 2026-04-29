@@ -99,6 +99,26 @@ export default function StorePage() {
         />
       </section>
 
+      {/* ── Street images ── */}
+      <section className="grid grid-cols-2">
+        <div className="relative h-[50vh] md:h-[65vh]">
+          <Image
+            src="/Street%201.png"
+            alt="Kensington Road, Knightsbridge"
+            fill
+            className="object-cover object-center"
+          />
+        </div>
+        <div className="relative h-[50vh] md:h-[65vh]">
+          <Image
+            src="/Street%202.png"
+            alt="Lucille London exterior"
+            fill
+            className="object-cover object-center"
+          />
+        </div>
+      </section>
+
       {/* ── Map CTA ── */}
       <StoreSection />
     </>
