@@ -52,11 +52,6 @@ export default function Footer() {
               <li key={h}><Link href={h} className="text-body-sm text-white/60 hover:text-white transition-colors">{l}</Link></li>
             ))}
           </ul>
-          <div className="mt-6 p-4 border border-white/10">
-            <p className="text-label text-[9px] text-white/40 mb-2">KENSINGTON BOUTIQUE</p>
-            <p className="text-body-sm text-white/50">12 Montpelier Walk<br />London W8 4HT</p>
-            <p className="text-body-sm text-white/50 mt-2">Mon–Sat 10–6<br />Sun 11–5</p>
-          </div>
         </div>
       </div>
 
