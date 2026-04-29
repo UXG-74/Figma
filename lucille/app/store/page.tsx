@@ -92,7 +92,7 @@ export default function StorePage() {
       {/* ── store4 image ── */}
       <section className="relative w-full h-[50vh] md:h-[65vh] overflow-hidden">
         <Image
-          src="/store4.png"
+          src="/4.png"
           alt="Lucille London boutique detail"
           fill
           className="object-cover object-center"
