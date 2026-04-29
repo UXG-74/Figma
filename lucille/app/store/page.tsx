@@ -26,7 +26,7 @@ export default function StorePage() {
       {/* ── Store image ── */}
       <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
         <Image
-          src="/store1.png"
+          src="/1.png"
           alt="Lucille London boutique interior"
           fill
           className="object-cover object-center"
