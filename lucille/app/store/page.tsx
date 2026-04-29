@@ -55,7 +55,7 @@ export default function StorePage() {
         </div>
         <div className="relative overflow-hidden min-h-[380px]">
           <Image
-            src="/store2.png"
+            src="/2.png"
             alt="Inside Lucille London"
             fill
             className="object-cover object-center"
