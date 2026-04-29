@@ -4,22 +4,6 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <footer className="bg-[#1a1a1a] text-white mt-24">
-      {/* Newsletter */}
-      <div className="border-b border-white/10 py-16 px-8">
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="text-label text-[10px] text-[#e5c3c3] mb-3">THE LUCILLE JOURNAL</p>
-          <h3 className="font-display text-2xl mb-2">Stay in the world of Lucille</h3>
-          <p className="text-body-sm text-white/50 mb-6">New collections, private events and the edit — delivered discreetly.</p>
-          <form className="flex gap-0 max-w-sm mx-auto" onSubmit={e => e.preventDefault()}>
-            <input type="email" placeholder="Your email address"
-              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-white/40 text-[13px] outline-none focus:border-white/60 transition-colors font-[var(--font-body)]" />
-            <button type="submit" className="bg-[#e5c3c3] text-[#1a1a1a] px-5 py-3 text-label text-[9px] hover:bg-white transition-colors shrink-0">
-              JOIN
-            </button>
-          </form>
-        </div>
-      </div>
-
       {/* Links */}
       <div className="max-w-6xl mx-auto px-8 py-14 grid grid-cols-2 md:grid-cols-4 gap-10">
         {/* Brand */}
