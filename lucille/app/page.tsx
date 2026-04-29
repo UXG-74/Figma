@@ -11,7 +11,7 @@ export default function HomePage() {
       {/* ── Hero ── */}
       <section className="relative h-[90vh] min-h-[600px] overflow-hidden">
         <Image src="/homepage.png" alt="Lucille London — La Belle Époque" fill
-          className="object-cover object-center" priority />
+          className="object-cover object-[55%_50%] md:object-center" priority />
         {/* Gradient overlay */}
         <div className="absolute inset-0"
           style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%)' }} />
