@@ -10,10 +10,10 @@ export default function EditsPage() {
   return (
     <>
       {/* Header */}
-      <section className="py-20 text-center border-b border-[#e8e0dc] bg-[#faf7f5]">
-        <p className="text-label text-[9px] text-[#8c7b7b] mb-3">A Lifestyle Journal</p>
+      <section className="py-20 text-center border-b border-[var(--c-border)] bg-[var(--c-bg-soft)]">
+        <p className="text-label text-[9px] text-[var(--c-text-muted)] mb-3">A Lifestyle Journal</p>
         <h1 className="font-display text-5xl md:text-6xl font-medium">Edits</h1>
-        <p className="text-body-sm text-[#8c7b7b] mt-4 max-w-md mx-auto">
+        <p className="text-body-sm text-[var(--c-text-muted)] mt-4 max-w-md mx-auto">
           On beauty, style, interiors and the quiet luxury of an intentional life.
         </p>
       </section>
@@ -37,15 +37,15 @@ export default function EditsPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {rest.map(post => (
             <Link key={post.id} href={`/edits/${post.slug}`} className="group">
-              <div className="aspect-[4/3] overflow-hidden bg-[#faf7f5] mb-5">
+              <div className="aspect-[4/3] overflow-hidden bg-[var(--c-bg-soft)] mb-5">
                 <ProductImage name={post.title} colour="blush" src={post.photoUrl}
                   className="group-hover:scale-105 transition-transform duration-700" />
               </div>
               <p className="text-label text-[9px] text-[#e5c3c3] mb-2">{post.category} · {post.date}</p>
               <h3 className="font-display text-2xl leading-tight mb-2 group-hover:opacity-70 transition-opacity">{post.title}</h3>
-              <p className="font-display italic text-[#8c7b7b] mb-3">{post.subtitle}</p>
-              <p className="text-body-sm text-[#8c7b7b] leading-relaxed line-clamp-3">{post.excerpt}</p>
-              <p className="text-label text-[9px] text-[#8c7b7b] mt-4">{post.readTime}</p>
+              <p className="font-display italic text-[var(--c-text-muted)] mb-3">{post.subtitle}</p>
+              <p className="text-body-sm text-[var(--c-text-muted)] leading-relaxed line-clamp-3">{post.excerpt}</p>
+              <p className="text-label text-[9px] text-[var(--c-text-muted)] mt-4">{post.readTime}</p>
             </Link>
           ))}
         </div>

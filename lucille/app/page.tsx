@@ -28,8 +28,8 @@ export default function HomePage() {
       </section>
 
       {/* ── Brand strip ── */}
-      <section className="py-10 px-8 text-center border-b border-[#e8e0dc]">
-        <p className="text-label text-[9px] text-[#8c7b7b] tracking-widest">
+      <section className="py-10 px-8 text-center border-b border-[var(--c-border)]">
+        <p className="text-label text-[9px] text-[var(--c-text-muted)] tracking-widest">
           Free Shipping &nbsp;·&nbsp; Complimentary Gift Wrapping &nbsp;·&nbsp; Returns within 30 Days &nbsp;·&nbsp; Kensington Boutique Open Daily
         </p>
       </section>
@@ -38,7 +38,7 @@ export default function HomePage() {
       <section className="py-20 px-8 md:px-16">
         <div className="flex items-end justify-between mb-10">
           <div>
-            <p className="text-label text-[9px] text-[#8c7b7b] mb-2">Just Arrived</p>
+            <p className="text-label text-[9px] text-[var(--c-text-muted)] mb-2">Just Arrived</p>
             <h2 className="font-display text-3xl md:text-4xl">New Arrivals</h2>
           </div>
           <Link href="/new" className="text-label text-[9px] hover:opacity-60 transition-opacity">View All</Link>
@@ -50,7 +50,7 @@ export default function HomePage() {
 
       {/* ── Editorial split: Nightwear ── */}
       <section className="grid md:grid-cols-2 min-h-[600px]">
-        <div className="relative overflow-hidden bg-[#faf7f5]">
+        <div className="relative overflow-hidden bg-[var(--c-bg-soft)]">
           <ProductImage name="Silk Robe" colour="ivory" className="absolute inset-0"
             src="https://images.unsplash.com/photo-1770294758971-44fa1eae61a3?w=1200&auto=format&fit=crop&q=80" />
         </div>
@@ -67,9 +67,9 @@ export default function HomePage() {
       </section>
 
       {/* ── Bestsellers ── */}
-      <section className="py-20 px-8 md:px-16 bg-[#faf7f5]">
+      <section className="py-20 px-8 md:px-16 bg-[var(--c-bg-soft)]">
         <div className="text-center mb-12">
-          <p className="text-label text-[9px] text-[#8c7b7b] mb-2">Perennially Beloved</p>
+          <p className="text-label text-[9px] text-[var(--c-text-muted)] mb-2">Perennially Beloved</p>
           <h2 className="font-display text-3xl md:text-4xl">The Favourites</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -79,12 +79,12 @@ export default function HomePage() {
 
       {/* ── Swim editorial ── */}
       <section className="grid md:grid-cols-2 min-h-[500px]">
-        <div className="bg-[#faf7f5] flex flex-col items-start justify-center p-14 md:p-20 order-2 md:order-1">
-          <p className="text-label text-[9px] text-[#8c7b7b] mb-4">Swim</p>
+        <div className="bg-[var(--c-bg-soft)] flex flex-col items-start justify-center p-14 md:p-20 order-2 md:order-1">
+          <p className="text-label text-[9px] text-[var(--c-text-muted)] mb-4">Swim</p>
           <h2 className="font-display text-4xl font-medium leading-[1.1] mb-5">
             Sun, <em>sea</em><br />and Italian Lycra
           </h2>
-          <p className="text-body-sm text-[#8c7b7b] mb-8 max-w-xs leading-relaxed">
+          <p className="text-body-sm text-[var(--c-text-muted)] mb-8 max-w-xs leading-relaxed">
             Minimalist swimwear with the same attention to fit and fabric that defines all of Lucille.
           </p>
           <Link href="/swim" className="btn-outline">Shop Swim</Link>
@@ -111,7 +111,7 @@ export default function HomePage() {
       <section className="py-20 px-8 md:px-16">
         <div className="flex items-end justify-between mb-10">
           <div>
-            <p className="text-label text-[9px] text-[#8c7b7b] mb-2">The Lucille Edit</p>
+            <p className="text-label text-[9px] text-[var(--c-text-muted)] mb-2">The Lucille Edit</p>
             <h2 className="font-display text-3xl md:text-4xl">Life, Beautifully Lived</h2>
           </div>
           <Link href="/edits" className="text-label text-[9px] hover:opacity-60 transition-opacity">Read All</Link>
@@ -119,13 +119,13 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {blogPosts.map(post => (
             <Link key={post.id} href={`/edits/${post.slug}`} className="group">
-              <div className="aspect-[4/3] bg-[#faf7f5] overflow-hidden mb-4">
+              <div className="aspect-[4/3] bg-[var(--c-bg-soft)] overflow-hidden mb-4">
                 <ProductImage name={post.title} colour="blush" src={post.photoUrl}
                   className="group-hover:scale-105 transition-transform duration-700" />
               </div>
               <p className="text-label text-[9px] text-[#e5c3c3] mb-2">{post.category}</p>
               <h3 className="font-display text-lg leading-tight mb-1 group-hover:opacity-70 transition-opacity">{post.title}</h3>
-              <p className="text-body-sm text-[#8c7b7b] line-clamp-2">{post.excerpt}</p>
+              <p className="text-body-sm text-[var(--c-text-muted)] line-clamp-2">{post.excerpt}</p>
             </Link>
           ))}
         </div>

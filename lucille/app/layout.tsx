@@ -32,7 +32,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${lato.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${lato.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `
+          try {
+            var t = localStorage.getItem('lucille-theme');
+            var d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (t === 'dark' || (!t && d)) document.documentElement.setAttribute('data-theme','dark');
+          } catch(e) {}
+        `}} />
+      </head>
       <body>
         <AnnouncementBar />
         <Navigation />

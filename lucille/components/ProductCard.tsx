@@ -16,7 +16,7 @@ export default function ProductCard({ product }: { product: Product }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}>
       <Link href={`/${product.category}/${product.slug}`}>
-        <div className="relative aspect-[3/4] overflow-hidden bg-[#faf7f5]">
+        <div className="relative aspect-[3/4] overflow-hidden bg-[var(--c-bg-soft)]">
           <ProductImage
             name={product.name}
             colour={hovered && product.colours[1] ? product.colours[1].name : defaultColour}
@@ -33,7 +33,7 @@ export default function ProductCard({ product }: { product: Product }) {
             )}
           </div>
           {/* Quick add */}
-          <div className={`absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-3 transition-all duration-300 ${hovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+          <div className={`absolute bottom-0 left-0 right-0 bg-[var(--c-bg)] backdrop-blur-sm p-3 transition-all duration-300 ${hovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
             <button
               onClick={e => { e.preventDefault(); addItem(product, defaultSize, defaultColour) }}
               className="btn-primary w-full text-[10px] py-2.5">
@@ -45,7 +45,7 @@ export default function ProductCard({ product }: { product: Product }) {
       <div className="mt-3 space-y-1">
         <p className="text-body-sm font-medium">{product.name}</p>
         {product.collection && (
-          <p className="text-body-sm text-[#8c7b7b] text-[11px] italic font-display">{product.collection}</p>
+          <p className="text-body-sm text-[var(--c-text-muted)] text-[11px] italic font-display">{product.collection}</p>
         )}
         <p className="text-body-sm">£{product.price}</p>
         {/* Colour dots */}

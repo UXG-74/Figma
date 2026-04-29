@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { useCartStore } from '@/lib/store'
 import { useState, useEffect } from 'react'
+import ThemeToggle from './ThemeToggle'
 
 const navLinks = [
   { label: 'New',        href: '/new' },
@@ -25,7 +26,8 @@ export default function Navigation() {
   }, [])
 
   return (
-    <nav className={`sticky top-0 z-40 bg-white transition-shadow duration-300 ${scrolled ? 'shadow-sm' : ''}`}>
+    <nav className={`sticky top-0 z-40 bg-[var(--c-bg)] transition-shadow duration-300 ${scrolled ? 'shadow-sm' : ''}`}
+      style={{ borderBottom: scrolled ? '1px solid var(--c-border)' : 'none' }}>
       <div className="flex flex-col items-center pt-6 pb-0 px-8">
         {/* Top row: utility icons */}
         <div className="w-full flex items-center justify-between mb-6">
@@ -40,12 +42,13 @@ export default function Navigation() {
           <Link href="/" className="absolute left-1/2 -translate-x-1/2">
             <div className="flex flex-col items-center">
               <span className="font-display text-[2rem] tracking-tight leading-none font-medium">Lucille</span>
-              <span className="text-label text-[8px] tracking-[0.3em] mt-0.5">LONDON</span>
+              <span className="text-label text-[8px] tracking-[0.3em] mt-0.5 text-[var(--c-text-muted)]">LONDON</span>
             </div>
           </Link>
 
           {/* Right icons */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1">
+            <ThemeToggle />
             <button className="p-2 opacity-60 hover:opacity-100 transition-opacity" aria-label="Account">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
@@ -74,7 +77,7 @@ export default function Navigation() {
         </div>
 
         {/* Nav links */}
-        <div className="flex items-center gap-10 pb-3 border-t border-[#e8e0dc] w-full justify-center pt-3">
+        <div className="flex items-center gap-10 pb-3 border-t border-[var(--c-border)] w-full justify-center pt-3">
           {navLinks.map(link => (
             <Link key={link.href} href={link.href}
               className="text-label text-[10px] hover:opacity-60 transition-opacity">

@@ -23,8 +23,8 @@ export default async function EditArticlePage({ params }: { params: Promise<{ sl
 
       {/* Article */}
       <article className="max-w-2xl mx-auto px-8 py-16">
-        <p className="font-display text-xl italic text-[#8c7b7b] leading-relaxed mb-8">{post.excerpt}</p>
-        <div className="prose prose-neutral text-body-sm text-[#3a3a3a] leading-relaxed space-y-6">
+        <p className="font-display text-xl italic text-[var(--c-text-muted)] leading-relaxed mb-8">{post.excerpt}</p>
+        <div className="prose prose-neutral text-body-sm text-[var(--c-text-mid)] leading-relaxed space-y-6">
           <p>Lucille was conceived not as a brand, but as an idea — that intimacy deserves the same attention as any other dimension of a woman's life. That the garments closest to the skin should be the finest, the most considered, the most beautiful.</p>
           <p>Our Kensington boutique is a space apart: hushed, unhurried, its pale walls and silk-draped rails creating an atmosphere closer to a private apartment than a shop. Women come here not just to buy, but to be taken care of.</p>
           <p>This philosophy extends to every piece we make. The lace is sourced from the same mills in Calais that have supplied Parisian couturiers for over a century. The silk charmeuse arrives from Como, its weight and drape unmatched by anything produced at industrial scale. Each piece is finished by hand in our London atelier.</p>
@@ -32,7 +32,7 @@ export default async function EditArticlePage({ params }: { params: Promise<{ sl
         </div>
 
         {/* Back */}
-        <div className="mt-14 pt-8 border-t border-[#e8e0dc]">
+        <div className="mt-14 pt-8 border-t border-[var(--c-border)]">
           <Link href="/edits" className="text-label text-[9px] hover:opacity-60 transition-opacity">← Back to Edits</Link>
         </div>
       </article>
@@ -43,7 +43,7 @@ export default async function EditArticlePage({ params }: { params: Promise<{ sl
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {blogPosts.filter(p => p.slug !== slug).slice(0, 3).map(p => (
             <Link key={p.id} href={`/edits/${p.slug}`} className="group">
-              <div className="aspect-[4/3] overflow-hidden bg-[#faf7f5] mb-4">
+              <div className="aspect-[4/3] overflow-hidden bg-[var(--c-bg-soft)] mb-4">
                 <ProductImage name={p.title} colour="blush" src={p.photoUrl}
                   className="group-hover:scale-105 transition-transform duration-700" />
               </div>

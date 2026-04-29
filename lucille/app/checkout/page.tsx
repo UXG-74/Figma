@@ -90,28 +90,28 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#faf7f5]">
+    <div className="min-h-screen bg-[var(--c-bg-soft)]">
       <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_420px] min-h-screen">
 
         {/* ── Left: Form ── */}
-        <div className="bg-white px-8 md:px-16 py-12">
+        <div className="bg-[var(--c-bg)] px-8 md:px-16 py-12">
           {/* Logo */}
           <Link href="/" className="block mb-10">
             <p className="font-display text-2xl">Lucille</p>
-            <p className="text-label text-[8px] tracking-widest text-[#8c7b7b]">LONDON</p>
+            <p className="text-label text-[8px] tracking-widest text-[var(--c-text-muted)]">LONDON</p>
           </Link>
 
           {/* Breadcrumb steps */}
           <div className="flex items-center gap-2 mb-10">
             {(['information', 'shipping', 'payment'] as Step[]).map((s, i) => (
               <div key={s} className="flex items-center gap-2">
-                {i > 0 && <span className="text-[#e8e0dc]">›</span>}
+                {i > 0 && <span className="text-[var(--c-border)]">›</span>}
                 <button
                   onClick={() => {
                     if (s === 'information') setStep('information')
                     if (s === 'shipping' && step === 'payment') setStep('shipping')
                   }}
-                  className={`text-label text-[9px] capitalize transition-colors ${step === s ? 'text-[#1a1a1a]' : 'text-[#8c7b7b] hover:text-[#1a1a1a]'}`}>
+                  className={`text-label text-[9px] capitalize transition-colors ${step === s ? 'text-[var(--c-text)]' : 'text-[var(--c-text-muted)] hover:text-[var(--c-text)]'}`}>
                   {s}
                 </button>
               </div>
@@ -122,19 +122,19 @@ export default function CheckoutPage() {
           {step === 'information' && (
             <form onSubmit={handleInfoSubmit} className="space-y-6">
               <div>
-                <p className="text-label text-[9px] text-[#8c7b7b] mb-4">Contact</p>
+                <p className="text-label text-[9px] text-[var(--c-text-muted)] mb-4">Contact</p>
                 <input type="email" placeholder="Email address"
                   value={info.email} onChange={e => setInfo(i => ({...i, email: e.target.value}))}
                   className="input-lucille" />
                 {errors.email && <p className="text-[#c9a0a0] text-body-sm mt-1">{errors.email}</p>}
                 <label className="flex items-center gap-2 mt-3 cursor-pointer">
                   <input type="checkbox" className="accent-[#1a1a1a]" defaultChecked />
-                  <span className="text-body-sm text-[#8c7b7b]">Email me with news and exclusive offers</span>
+                  <span className="text-body-sm text-[var(--c-text-muted)]">Email me with news and exclusive offers</span>
                 </label>
               </div>
 
               <div>
-                <p className="text-label text-[9px] text-[#8c7b7b] mb-4">Delivery Address</p>
+                <p className="text-label text-[9px] text-[var(--c-text-muted)] mb-4">Delivery Address</p>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <input placeholder="First name" value={info.firstName}
@@ -187,30 +187,30 @@ export default function CheckoutPage() {
           {step === 'shipping' && (
             <form onSubmit={handleShippingSubmit} className="space-y-6">
               {/* Contact summary */}
-              <div className="border border-[#e8e0dc] p-4 flex justify-between items-center">
+              <div className="border border-[var(--c-border)] p-4 flex justify-between items-center">
                 <div>
-                  <p className="text-label text-[9px] text-[#8c7b7b] mb-1">Contact</p>
+                  <p className="text-label text-[9px] text-[var(--c-text-muted)] mb-1">Contact</p>
                   <p className="text-body-sm">{info.email}</p>
                 </div>
                 <button type="button" onClick={() => setStep('information')}
-                  className="text-label text-[9px] text-[#8c7b7b] underline hover:text-[#1a1a1a] transition-colors">Change</button>
+                  className="text-label text-[9px] text-[var(--c-text-muted)] underline hover:text-[var(--c-text)] transition-colors">Change</button>
               </div>
-              <div className="border border-[#e8e0dc] p-4 flex justify-between items-center">
+              <div className="border border-[var(--c-border)] p-4 flex justify-between items-center">
                 <div>
-                  <p className="text-label text-[9px] text-[#8c7b7b] mb-1">Ship to</p>
+                  <p className="text-label text-[9px] text-[var(--c-text-muted)] mb-1">Ship to</p>
                   <p className="text-body-sm">{info.address}, {info.city}, {info.postcode}</p>
                 </div>
                 <button type="button" onClick={() => setStep('information')}
-                  className="text-label text-[9px] text-[#8c7b7b] underline hover:text-[#1a1a1a] transition-colors">Change</button>
+                  className="text-label text-[9px] text-[var(--c-text-muted)] underline hover:text-[var(--c-text)] transition-colors">Change</button>
               </div>
 
               <div>
-                <p className="text-label text-[9px] text-[#8c7b7b] mb-4">Shipping Method</p>
+                <p className="text-label text-[9px] text-[var(--c-text-muted)] mb-4">Shipping Method</p>
                 <div className="space-y-2">
                   {SHIPPING.map(s => (
                     <label key={s.id}
                       className={`flex items-center justify-between p-4 border cursor-pointer transition-colors ${
-                        shipping.id === s.id ? 'border-[#1a1a1a]' : 'border-[#e8e0dc] hover:border-[#8c7b7b]'
+                        shipping.id === s.id ? 'border-[var(--c-text)]' : 'border-[var(--c-border)] hover:border-[#8c7b7b]'
                       }`}>
                       <div className="flex items-center gap-3">
                         <input type="radio" name="shipping" value={s.id}
@@ -219,7 +219,7 @@ export default function CheckoutPage() {
                           className="accent-[#1a1a1a]" />
                         <div>
                           <p className="text-body-sm font-medium">{s.label}</p>
-                          <p className="text-body-sm text-[#8c7b7b]">{s.sub}</p>
+                          <p className="text-body-sm text-[var(--c-text-muted)]">{s.sub}</p>
                         </div>
                       </div>
                       <p className="text-body-sm font-medium">{s.price === 0 ? 'Free' : `£${s.price}`}</p>
@@ -246,24 +246,24 @@ export default function CheckoutPage() {
 
               <div className="relative flex items-center gap-3">
                 <div className="h-px flex-1 bg-[#e8e0dc]" />
-                <span className="text-body-sm text-[#8c7b7b]">or pay by card</span>
+                <span className="text-body-sm text-[var(--c-text-muted)]">or pay by card</span>
                 <div className="h-px flex-1 bg-[#e8e0dc]" />
               </div>
 
               {/* Test card hint */}
-              <div className="bg-[#faf7f5] border border-[#e8e0dc] p-4">
-                <p className="text-label text-[9px] text-[#8c7b7b] mb-2">TEST CARD NUMBERS</p>
+              <div className="bg-[var(--c-bg-soft)] border border-[var(--c-border)] p-4">
+                <p className="text-label text-[9px] text-[var(--c-text-muted)] mb-2">TEST CARD NUMBERS</p>
                 {TEST_CARDS.map(c => (
-                  <p key={c.num} className="text-body-sm text-[#3a3a3a]">
+                  <p key={c.num} className="text-body-sm text-[var(--c-text-mid)]">
                     <span className="font-mono">{c.num}</span>
-                    <span className="text-[#8c7b7b]"> — {c.type}</span>
+                    <span className="text-[var(--c-text-muted)]"> — {c.type}</span>
                   </p>
                 ))}
-                <p className="text-body-sm text-[#8c7b7b] mt-1">Any future expiry · any 3-digit CVC</p>
+                <p className="text-body-sm text-[var(--c-text-muted)] mt-1">Any future expiry · any 3-digit CVC</p>
               </div>
 
               <div>
-                <p className="text-label text-[9px] text-[#8c7b7b] mb-4">Payment</p>
+                <p className="text-label text-[9px] text-[var(--c-text-muted)] mb-4">Payment</p>
                 <div className="space-y-3">
                   <div>
                     <input placeholder="Card number" value={card.number}
@@ -290,7 +290,7 @@ export default function CheckoutPage() {
               </button>
 
               {/* Security badges */}
-              <p className="text-center text-body-sm text-[#8c7b7b] flex items-center justify-center gap-2">
+              <p className="text-center text-body-sm text-[var(--c-text-muted)] flex items-center justify-center gap-2">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                 </svg>
@@ -301,7 +301,7 @@ export default function CheckoutPage() {
         </div>
 
         {/* ── Right: Order Summary ── */}
-        <div className="bg-[#faf7f5] border-l border-[#e8e0dc] px-8 py-12">
+        <div className="bg-[var(--c-bg-soft)] border-l border-[var(--c-border)] px-8 py-12">
           <h2 className="font-display text-xl mb-8">Order Summary</h2>
 
           {/* Items */}
@@ -319,7 +319,7 @@ export default function CheckoutPage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-body-sm font-medium leading-tight">{item.product.name}</p>
-                  <p className="text-body-sm text-[#8c7b7b]">{item.colour} · {item.size}</p>
+                  <p className="text-body-sm text-[var(--c-text-muted)]">{item.colour} · {item.size}</p>
                   <p className="text-body-sm font-medium mt-1">£{(item.product.price * item.quantity).toFixed(2)}</p>
                 </div>
               </div>
@@ -333,22 +333,22 @@ export default function CheckoutPage() {
           </div>
 
           {/* Totals */}
-          <div className="space-y-3 border-t border-[#e8e0dc] pt-5">
+          <div className="space-y-3 border-t border-[var(--c-border)] pt-5">
             <div className="flex justify-between text-body-sm">
-              <span className="text-[#8c7b7b]">Subtotal</span>
+              <span className="text-[var(--c-text-muted)]">Subtotal</span>
               <span>£{total().toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-body-sm">
-              <span className="text-[#8c7b7b]">Shipping</span>
+              <span className="text-[var(--c-text-muted)]">Shipping</span>
               <span>{shipping.price === 0 ? 'Free' : `£${shipping.price}`}</span>
             </div>
             <div className="flex justify-between text-body-sm">
-              <span className="text-[#8c7b7b]">Gift wrapping</span>
-              <span className="text-[#8c7b7b] italic">Complimentary</span>
+              <span className="text-[var(--c-text-muted)]">Gift wrapping</span>
+              <span className="text-[var(--c-text-muted)] italic">Complimentary</span>
             </div>
-            <div className="flex justify-between font-display text-lg border-t border-[#e8e0dc] pt-3 mt-1">
+            <div className="flex justify-between font-display text-lg border-t border-[var(--c-border)] pt-3 mt-1">
               <span>Total</span>
-              <span>£{orderTotal.toFixed(2)} <span className="text-body-sm text-[#8c7b7b] font-normal">GBP</span></span>
+              <span>£{orderTotal.toFixed(2)} <span className="text-body-sm text-[var(--c-text-muted)] font-normal">GBP</span></span>
             </div>
           </div>
         </div>
