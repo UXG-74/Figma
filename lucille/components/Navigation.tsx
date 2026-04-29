@@ -140,7 +140,7 @@ export default function Navigation() {
               className="text-label text-[10px] text-[var(--c-text-muted)] hover:opacity-60 transition-opacity block mb-3">
               Store
             </Link>
-            <p className="text-body-sm text-[var(--c-text-muted)]">12 Montpelier Walk, London W8 4HT</p>
+            <p className="text-body-sm text-[var(--c-text-muted)]">Kensington Road, Knightsbridge</p>
           </div>
         </div>
       )}

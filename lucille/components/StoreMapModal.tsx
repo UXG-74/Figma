@@ -1,9 +1,9 @@
 'use client'
 import { useEffect } from 'react'
 
-const EMBED_URL   = 'https://maps.google.com/maps?q=12+Montpelier+Walk+London+W8+4HT&t=&z=16&ie=UTF8&iwloc=&output=embed'
-const GOOGLE_URL  = 'https://www.google.com/maps/dir/?api=1&destination=12+Montpelier+Walk,+London+W8+4HT'
-const APPLE_URL   = 'https://maps.apple.com/?daddr=12+Montpelier+Walk+London+W8+4HT'
+const EMBED_URL   = 'https://maps.google.com/maps?q=Kensington+Road+Knightsbridge+London&t=&z=16&ie=UTF8&iwloc=&output=embed'
+const GOOGLE_URL  = 'https://www.google.com/maps/dir/?api=1&destination=Kensington+Road,+Knightsbridge,+London'
+const APPLE_URL   = 'https://maps.apple.com/?daddr=Kensington+Road+Knightsbridge+London'
 
 export default function StoreMapModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   useEffect(() => {
@@ -47,7 +47,7 @@ export default function StoreMapModal({ open, onClose }: { open: boolean; onClos
               <div className="space-y-5 text-body-sm text-white/60">
                 <div>
                   <p className="text-white/40 text-label text-[9px] mb-1">Address</p>
-                  <p>12 Montpelier Walk<br />London W8 4HT</p>
+                  <p>Kensington Road<br />Knightsbridge, London</p>
                 </div>
                 <div>
                   <p className="text-white/40 text-label text-[9px] mb-1">Hours</p>
