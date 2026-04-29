@@ -137,7 +137,7 @@ export default function Navigation() {
             ))}
           </nav>
           <div className="mt-auto pb-12 border-t border-[var(--c-border)] pt-8">
-            <Link href="/store-locator" onClick={closeMenu}
+            <Link href="/store" onClick={closeMenu}
               className="text-label text-[10px] text-[var(--c-text-muted)] hover:opacity-60 transition-opacity block mb-3">
               Store
             </Link>
