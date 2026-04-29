@@ -52,7 +52,7 @@ export default function HomePage() {
       <section className="grid md:grid-cols-2 min-h-[600px]">
         <div className="relative overflow-hidden bg-[var(--c-bg-soft)]">
           <ProductImage name="Silk Robe" colour="ivory" className="absolute inset-0"
-            src="https://images.unsplash.com/photo-1770294758971-44fa1eae61a3?w=1200&auto=format&fit=crop&q=80" />
+            src="/IMG_%201964.jpg" />
         </div>
         <div className="bg-[#1a1a1a] text-white flex flex-col items-start justify-center p-14 md:p-20">
           <p className="text-label text-[9px] text-[#e5c3c3] mb-4">Nightwear</p>
