@@ -114,7 +114,7 @@ export default function StorePage() {
             src="/Street%202.png"
             alt="Lucille London exterior"
             fill
-            className="object-cover object-center"
+            className="object-cover object-left"
           />
         </div>
       </section>
