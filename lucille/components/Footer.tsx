@@ -57,7 +57,7 @@ export default function Footer() {
 
       {/* Legal */}
       <div className="border-t border-white/10 px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-body-sm text-white/30">© 2025 Lucille London. All rights reserved.</p>
+        <p className="text-body-sm text-white/30">© 2026 Lucille London. All rights reserved.</p>
         <div className="flex gap-6">
           {['Privacy Policy', 'Cookie Policy', 'Terms & Conditions'].map(l => (
             <a key={l} href="#" className="text-body-sm text-white/30 hover:text-white/60 transition-colors">{l}</a>
