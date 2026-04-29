@@ -10,7 +10,7 @@ export default function HomePage() {
     <>
       {/* ── Hero ── */}
       <section className="relative h-[90vh] min-h-[600px] overflow-hidden">
-        <Image src="/homepage.png" alt="Lucille London — La Belle Époque" fill
+        <Image src="/hero-fireplace.png" alt="Lucille London — La Belle Époque" fill
           className="object-cover object-[55%_50%] md:object-center" priority />
         {/* Gradient overlay */}
         <div className="absolute inset-0"
