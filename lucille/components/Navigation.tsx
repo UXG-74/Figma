@@ -17,7 +17,8 @@ const navLinks = [
 export default function Navigation() {
   const count    = useCartStore(s => s.count)
   const openCart = useCartStore(s => s.openCart)
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled,   setScrolled]   = useState(false)
+  const [menuOpen,   setMenuOpen]   = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -25,67 +26,124 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Close menu on route change
+  const closeMenu = () => setMenuOpen(false)
+
   return (
-    <nav className={`sticky top-0 z-40 bg-[var(--c-bg)] transition-shadow duration-300 ${scrolled ? 'shadow-sm' : ''}`}
-      style={{ borderBottom: scrolled ? '1px solid var(--c-border)' : 'none' }}>
-      <div className="flex flex-col items-center pt-6 pb-0 px-8">
-        {/* Top row: utility icons */}
-        <div className="w-full flex items-center justify-between mb-6">
-          {/* Search */}
-          <button className="p-2 opacity-60 hover:opacity-100 transition-opacity" aria-label="Search">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-            </svg>
-          </button>
+    <>
+      <nav className={`sticky top-0 z-40 bg-[var(--c-bg)] transition-shadow duration-300 ${scrolled ? 'shadow-sm' : ''}`}
+        style={{ borderBottom: scrolled ? '1px solid var(--c-border)' : 'none' }}>
+        <div className="flex flex-col items-center pt-6 pb-0 px-8">
 
-          {/* Logo */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2">
-            <div className="flex flex-col items-center">
-              <span className="font-display text-[2rem] tracking-tight leading-none font-medium">Lucille</span>
-              <span className="text-label text-[8px] tracking-[0.3em] mt-0.5 text-[var(--c-text-muted)]">LONDON</span>
+          {/* Top row */}
+          <div className="w-full flex items-center justify-between mb-6">
+
+            {/* Left — burger on mobile, search on desktop */}
+            <div className="flex items-center">
+              {/* Burger — mobile only */}
+              <button
+                className="md:hidden p-2 opacity-60 hover:opacity-100 transition-opacity"
+                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                onClick={() => setMenuOpen(o => !o)}
+              >
+                {menuOpen ? (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M18 6 6 18M6 6l12 12"/>
+                  </svg>
+                ) : (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <line x1="3" y1="6"  x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                  </svg>
+                )}
+              </button>
+
+              {/* Search — desktop only */}
+              <button className="hidden md:flex p-2 opacity-60 hover:opacity-100 transition-opacity" aria-label="Search">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                </svg>
+              </button>
             </div>
-          </Link>
 
-          {/* Right icons */}
-          <div className="flex items-center gap-1">
-            <ThemeToggle />
-            <button className="p-2 opacity-60 hover:opacity-100 transition-opacity" aria-label="Account">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-            </button>
-            <Link href="/store-locator" className="p-2 opacity-60 hover:opacity-100 transition-opacity" aria-label="Store">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-                <circle cx="12" cy="9" r="2.5"/>
-              </svg>
+            {/* Logo — centred */}
+            <Link href="/" className="absolute left-1/2 -translate-x-1/2" onClick={closeMenu}>
+              <div className="flex flex-col items-center">
+                <span className="font-display text-[2rem] tracking-tight leading-none font-medium">Lucille</span>
+                <span className="text-label text-[8px] tracking-[0.3em] mt-0.5 text-[var(--c-text-muted)]">LONDON</span>
+              </div>
             </Link>
-            <button onClick={openCart} className="p-2 opacity-60 hover:opacity-100 transition-opacity relative" aria-label="Cart">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                <line x1="3" y1="6" x2="21" y2="6"/>
-                <path d="M16 10a4 4 0 0 1-8 0"/>
-              </svg>
-              {count() > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 bg-[#1a1a1a] text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
-                  {count()}
-                </span>
-              )}
-            </button>
+
+            {/* Right icons */}
+            <div className="flex items-center gap-1">
+              <ThemeToggle />
+              <button className="p-2 opacity-60 hover:opacity-100 transition-opacity" aria-label="Account">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </button>
+              {/* Store locator — desktop only */}
+              <Link href="/store-locator" className="hidden md:flex p-2 opacity-60 hover:opacity-100 transition-opacity" aria-label="Store">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                  <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+              </Link>
+              <button onClick={openCart} className="p-2 opacity-60 hover:opacity-100 transition-opacity relative" aria-label="Cart">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                  <line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+                {count() > 0 && (
+                  <span className="absolute -top-0.5 -right-0.5 bg-[#1a1a1a] text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
+                    {count()}
+                  </span>
+                )}
+              </button>
+            </div>
+          </div>
+
+          {/* Desktop nav links */}
+          <div className="hidden md:flex items-center gap-10 pb-3 border-t border-[var(--c-border)] w-full justify-center pt-3">
+            {navLinks.map(link => (
+              <Link key={link.href} href={link.href}
+                className="text-label text-[10px] hover:opacity-60 transition-opacity">
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+        </div>
+      </nav>
+
+      {/* Mobile menu overlay */}
+      {menuOpen && (
+        <div className="fixed inset-0 z-30 bg-[var(--c-bg)] flex flex-col pt-32 px-10 md:hidden"
+          style={{ top: 0 }}>
+          <nav className="flex flex-col gap-8">
+            {navLinks.map(link => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={closeMenu}
+                className="font-display text-3xl font-medium hover:opacity-60 transition-opacity"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="mt-auto pb-12 border-t border-[var(--c-border)] pt-8">
+            <Link href="/store-locator" onClick={closeMenu}
+              className="text-label text-[10px] text-[var(--c-text-muted)] hover:opacity-60 transition-opacity block mb-3">
+              Store
+            </Link>
+            <p className="text-body-sm text-[var(--c-text-muted)]">12 Montpelier Walk, London W8 4HT</p>
           </div>
         </div>
-
-        {/* Nav links */}
-        <div className="flex items-center gap-10 pb-3 border-t border-[var(--c-border)] w-full justify-center pt-3">
-          {navLinks.map(link => (
-            <Link key={link.href} href={link.href}
-              className="text-label text-[10px] hover:opacity-60 transition-opacity">
-              {link.label}
-            </Link>
-          ))}
-        </div>
-      </div>
-    </nav>
+      )}
+    </>
   )
 }
