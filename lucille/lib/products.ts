@@ -165,7 +165,6 @@ export const products: Product[] = [
     colours: [{ name: 'Blush', hex: '#e5c3c3' }],
     images: ['gift-card'],
     photoUrl: '/giftbox.png',
-    photoObjectFit: 'contain',
   },
   {
     id: '10',
