@@ -1047,6 +1047,9 @@ export default function ClarityApp() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+        #clarity-root h1, #clarity-root h2, #clarity-root h3, #clarity-root h4 {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
         input[type=range] { -webkit-appearance: none; appearance: none; background: transparent; }
         input[type=range]::-webkit-slider-runnable-track { height: 5px; border-radius: 3px; background: linear-gradient(90deg, #003087, #0066B2); }
         input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; background: #003087; margin-top: -8.5px; box-shadow: 0 2px 8px rgba(0,48,135,0.4); cursor: grab; }
@@ -1055,7 +1058,7 @@ export default function ClarityApp() {
       `}</style>
 
       {/* Page wrapper — covers the Lucille site entirely */}
-      <div style={{
+      <div id="clarity-root" style={{
         position: 'fixed', inset: 0, zIndex: 9999,
         background: 'radial-gradient(ellipse at 30% 20%, #001A5C 0%, #000820 50%, #000D1A 100%)',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
