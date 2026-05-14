@@ -76,7 +76,7 @@ const DEALER_TACTICS = [
     subtitle: 'Hook #1: The Free Sample',
     body: 'The first experience is often "on someone else\'s tab." Once the baseline is set, you\'re chasing it. You didn\'t choose to get hooked — you were handed the trigger.',
     model: 'Nir Eyal\'s Hooked model starts here: the external trigger. That first experience wires a neural pathway that your brain will spend years trying to recreate.',
-    color: '#9333ea',
+    color: '#003087',
   },
   {
     number: 2,
@@ -84,7 +84,7 @@ const DEALER_TACTICS = [
     subtitle: 'Hook #2: The Slot Machine',
     body: 'Every batch is different. Different purity, different effect. That unpredictability keeps you coming back — exactly like a slot machine. You\'re not chasing the high. You\'re chasing the possibility of it.',
     model: 'Variable reward is the most powerful behavioural hook in psychology. Inconsistent reinforcement creates stronger compulsion than reliable reward. This is deliberate.',
-    color: '#6366f1',
+    color: '#0066B2',
   },
   {
     number: 3,
@@ -92,7 +92,7 @@ const DEALER_TACTICS = [
     subtitle: 'Hook #3: You Deserve This',
     body: '"Hard week? Long day? You\'ve earned it." This story makes use feel rational — even like self-care. It\'s the most seductive marketing script ever written.',
     model: 'Internal triggers. Your emotional state (stress, boredom, loneliness) becomes the cue. The substance becomes your default emotional regulation strategy. That\'s when it owns you.',
-    color: '#8b5cf6',
+    color: '#F57600',
   },
   {
     number: 4,
@@ -100,7 +100,7 @@ const DEALER_TACTICS = [
     subtitle: 'Hook #4: More for Less',
     body: 'It takes more to feel the same. You\'re spending more for a diminishing return. Quitting now feels like "losing" — but continuing is the actual loss.',
     model: 'Investment in Hooked: the more you\'ve put in, the harder to walk away. Sunk cost bias keeps you in the game. Your escalating spend is the evidence.',
-    color: '#a855f7',
+    color: '#C85000',
   },
   {
     number: 5,
@@ -108,7 +108,7 @@ const DEALER_TACTICS = [
     subtitle: 'Hook #5: Everyone Does It',
     body: 'When your entire social scene uses, abstaining feels abnormal. Use becomes invisible and ambient. Quitting means challenging your social identity — that\'s why it\'s so hard.',
     model: 'Social norms are the most powerful behaviour driver in existence. The dealer doesn\'t need to sell to you directly. Your environment does it for them.',
-    color: '#c026d3',
+    color: '#BB1919',
   },
   {
     number: 6,
@@ -116,7 +116,7 @@ const DEALER_TACTICS = [
     subtitle: 'Hook #6: Always On',
     body: 'Three messages and it\'s at your door within the hour. The friction to obtain has been engineered to near-zero. Low effort plus any motivation equals use.',
     model: 'BJ Fogg\'s Behaviour Model: Motivation × Ability × Trigger. When ability is effortless, even mild motivation triggers use. Your dealer\'s best product is convenience.',
-    color: '#7c3aed',
+    color: '#00A4E4',
   },
 ]
 
@@ -162,21 +162,22 @@ function annualComparison(annual: number): string {
 }
 
 // ── Shared UI ────────────────────────────────────────────────────────
+// Sky Sports navy · TNT Sport orange · BBC Sport red
 const C = {
-  purple: '#7c3aed',
-  purpleLight: '#f5f3ff',
-  purpleDark: '#4c1d95',
-  indigo: '#4f46e5',
-  green: '#059669',
-  greenLight: '#ecfdf5',
-  amber: '#d97706',
-  amberLight: '#fef3c7',
-  red: '#dc2626',
-  redLight: '#fef2f2',
-  text: '#1f1b3a',
-  muted: '#6b7280',
-  border: '#e5e7eb',
-  bg: '#f8f6ff',
+  purple: '#003087',       // Sky Sports navy — primary
+  purpleLight: '#E3EDF8',  // light navy tint
+  purpleDark: '#001A5C',   // deep navy
+  indigo: '#0066B2',       // Sky Sports mid blue
+  green: '#00875A',        // money / positive
+  greenLight: '#E2F5EC',
+  amber: '#F57600',        // TNT Sport orange
+  amberLight: '#FFF2E6',   // light TNT orange
+  red: '#BB1919',          // BBC Sport red
+  redLight: '#FFE8E8',
+  text: '#0A0F2E',         // near-black navy text
+  muted: '#4A5D7A',        // muted navy-grey
+  border: '#C5D7EE',       // light blue border
+  bg: '#EDF3FB',           // light sky background
   card: '#ffffff',
 }
 
@@ -199,10 +200,10 @@ function Btn({
         background: disabled
           ? '#e5e7eb'
           : danger
-          ? 'linear-gradient(135deg, #dc2626, #b91c1c)'
+          ? 'linear-gradient(135deg, #BB1919, #8B0000)'
           : secondary
-          ? '#f5f3ff'
-          : 'linear-gradient(135deg, #7c3aed, #4f46e5)',
+          ? C.purpleLight
+          : 'linear-gradient(135deg, #003087, #0066B2)',
         color: disabled ? '#9ca3af' : secondary ? C.purple : '#fff',
         border: secondary ? `2px solid ${C.purple}` : 'none',
         borderRadius: 16,
@@ -328,14 +329,14 @@ function SplashScreen({ onStart }: { onStart: () => void }) {
     <div style={{
       flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center',
       justifyContent: 'center', padding: '0 32px 40px',
-      background: 'linear-gradient(165deg, #faf8ff 0%, #ede9fe 55%, #dbeafe 100%)',
+      background: 'linear-gradient(165deg, #EDF3FB 0%, #C8DFF2 55%, #B0CFEA 100%)',
       gap: 28, textAlign: 'center',
     }}>
       <div style={{
         width: 88, height: 88,
-        background: 'linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%)',
+        background: 'linear-gradient(135deg, #003087 0%, #0066B2 100%)',
         borderRadius: 26, display: 'flex', alignItems: 'center', justifyContent: 'center',
-        fontSize: 40, boxShadow: '0 20px 48px rgba(124,58,237,0.35)',
+        fontSize: 40, boxShadow: '0 20px 48px rgba(0,48,135,0.40)',
       }}>
         👁️
       </div>
@@ -495,11 +496,11 @@ function ObSpend({ onNext }: { onNext: (spend: number) => void }) {
         <span>£10</span><span>£500+</span>
       </div>
 
-      <div style={{ background: 'linear-gradient(135deg, #fef3c7, #fde68a)', borderRadius: 18, padding: '18px 20px', marginBottom: 28 }}>
-        <p style={{ margin: 0, fontSize: 15, fontWeight: 800, color: '#92400e' }}>
+      <div style={{ background: 'linear-gradient(135deg, #FFF2E6, #FFE0C2)', borderRadius: 18, padding: '18px 20px', marginBottom: 28 }}>
+        <p style={{ margin: 0, fontSize: 15, fontWeight: 800, color: '#7A3200' }}>
           That's <span style={{ fontSize: 22 }}>{fmt(annual)}</span> a year
         </p>
-        <p style={{ margin: '6px 0 0', fontSize: 13, color: '#b45309' }}>
+        <p style={{ margin: '6px 0 0', fontSize: 13, color: '#A04400' }}>
           Enough for {annualComparison(annual)}.
         </p>
       </div>
@@ -551,7 +552,7 @@ function ObComplete({ name, onDone }: { name: string; onDone: () => void }) {
     <div style={{
       flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center',
       justifyContent: 'center', padding: '0 32px',
-      background: 'linear-gradient(165deg, #faf8ff 0%, #ede9fe 100%)',
+      background: 'linear-gradient(165deg, #EDF3FB 0%, #C8DFF2 100%)',
       gap: 20, textAlign: 'center',
     }}>
       <div style={{ fontSize: 72, lineHeight: 1 }}>✨</div>
@@ -592,7 +593,7 @@ function Dashboard({ user, onNav }: { user: UserData; onNav: (s: Screen) => void
     <div style={{ flex: 1, overflowY: 'auto', background: C.bg }}>
       {/* Header */}
       <div style={{
-        background: 'linear-gradient(140deg, #7c3aed 0%, #4f46e5 100%)',
+        background: 'linear-gradient(140deg, #003087 0%, #005EB8 100%)',
         padding: '24px 24px 36px', borderRadius: '0 0 36px 36px',
       }}>
         <p style={{ margin: 0, fontSize: 14, color: 'rgba(255,255,255,0.65)' }}>{greeting}</p>
@@ -649,10 +650,10 @@ function Dashboard({ user, onNav }: { user: UserData; onNav: (s: Screen) => void
             <div style={{
               height: '100%', width: `${grip}%`,
               background: grip > 65
-                ? 'linear-gradient(90deg, #dc2626, #ef4444)'
+                ? 'linear-gradient(90deg, #BB1919, #E02020)'
                 : grip > 35
-                ? 'linear-gradient(90deg, #d97706, #f59e0b)'
-                : 'linear-gradient(90deg, #059669, #10b981)',
+                ? 'linear-gradient(90deg, #F57600, #FF8C00)'
+                : 'linear-gradient(90deg, #00875A, #00B374)',
               borderRadius: 5, transition: 'width 1.2s cubic-bezier(0.16,1,0.3,1)',
             }} />
           </div>
@@ -688,12 +689,12 @@ function Dashboard({ user, onNav }: { user: UserData; onNav: (s: Screen) => void
         </div>
 
         {/* Today's challenge */}
-        <div style={{ background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)', borderRadius: 22, padding: '20px 22px', marginBottom: 20 }}>
-          <p style={{ margin: '0 0 6px', fontSize: 11, fontWeight: 800, color: '#92400e', textTransform: 'uppercase', letterSpacing: 1.2 }}>Today's challenge</p>
-          <p style={{ margin: 0, fontSize: 15, fontWeight: 700, color: '#78350f', lineHeight: 1.45 }}>
+        <div style={{ background: 'linear-gradient(135deg, #FFF2E6 0%, #FFE0C2 100%)', borderRadius: 22, padding: '20px 22px', marginBottom: 20 }}>
+          <p style={{ margin: '0 0 6px', fontSize: 11, fontWeight: 800, color: '#7A3200', textTransform: 'uppercase', letterSpacing: 1.2 }}>Today's challenge</p>
+          <p style={{ margin: 0, fontSize: 15, fontWeight: 700, color: '#5C2200', lineHeight: 1.45 }}>
             Name the trigger. What usually starts the urge?
           </p>
-          <p style={{ margin: '8px 0 0', fontSize: 13, color: '#b45309', lineHeight: 1.5 }}>
+          <p style={{ margin: '8px 0 0', fontSize: 13, color: '#A04400', lineHeight: 1.5 }}>
             Stress? Boredom? A specific person? A specific time? Naming it breaks 30% of the pattern.
           </p>
         </div>
@@ -741,8 +742,8 @@ function HealthScreen({ user }: { user: UserData }) {
 
         {tab === 'moderate' && (
           <>
-            <div style={{ background: '#fffbeb', borderRadius: 16, padding: '14px 16px' }}>
-              <p style={{ margin: 0, fontSize: 13, color: '#92400e', lineHeight: 1.55, fontWeight: 500 }}>
+            <div style={{ background: '#FFF2E6', borderRadius: 16, padding: '14px 16px' }}>
+              <p style={{ margin: 0, fontSize: 13, color: '#7A3200', lineHeight: 1.55, fontWeight: 500 }}>
                 These effects emerge with regular use. Most are reversible if you stop now.
               </p>
             </div>
@@ -795,16 +796,16 @@ function HealthScreen({ user }: { user: UserData }) {
               <div
                 key={i}
                 style={{
-                  background: item.highlight ? 'linear-gradient(135deg, #fef3c7, #fde68a)' : '#fff',
+                  background: item.highlight ? 'linear-gradient(135deg, #FFF2E6, #FFE0C2)' : '#fff',
                   borderRadius: 18, padding: '18px 20px',
                   boxShadow: '0 2px 14px rgba(0,0,0,0.06)',
                   display: 'flex', gap: 14, alignItems: 'flex-start',
-                  border: item.highlight ? `2px solid #f59e0b` : 'none',
+                  border: item.highlight ? `2px solid #F57600` : 'none',
                 }}
               >
                 <span style={{ fontSize: 30, flexShrink: 0, lineHeight: 1 }}>{item.icon}</span>
                 <div>
-                  <p style={{ margin: '0 0 5px', fontSize: 13, fontWeight: 800, color: item.highlight ? '#92400e' : C.purple }}>{item.period}</p>
+                  <p style={{ margin: '0 0 5px', fontSize: 13, fontWeight: 800, color: item.highlight ? '#7A3200' : C.purple }}>{item.period}</p>
                   <p style={{ margin: 0, fontSize: 14, color: C.text, lineHeight: 1.55 }}>{item.note}</p>
                 </div>
               </div>
@@ -878,9 +879,9 @@ function PlaybookScreen() {
         ))}
 
         {/* Counter-strategy card */}
-        <div style={{ background: 'linear-gradient(135deg, #ede9fe 0%, #dbeafe 100%)', borderRadius: 20, padding: 22, marginTop: 4 }}>
+        <div style={{ background: 'linear-gradient(135deg, #E3EDF8 0%, #C8DFF2 100%)', borderRadius: 20, padding: 22, marginTop: 4 }}>
           <p style={{ margin: '0 0 10px', fontSize: 15, fontWeight: 900, color: C.purpleDark }}>The counter-strategy</p>
-          <p style={{ margin: 0, fontSize: 14, color: '#3730a3', lineHeight: 1.65 }}>
+          <p style={{ margin: 0, fontSize: 14, color: '#001A5C', lineHeight: 1.65 }}>
             Clarity uses the same Hooked model — in reverse. Your streak is the trigger. Checking in is the action. Unlocking milestones is the variable reward. Your data, savings and progress are the investment. Same system. Your goal, not theirs.
           </p>
         </div>
@@ -923,17 +924,17 @@ function ProgressScreen({ user }: { user: UserData }) {
         </div>
 
         {/* Annual stake */}
-        <div style={{ background: 'linear-gradient(135deg, #fef3c7, #fde68a)', borderRadius: 20, padding: '20px 22px' }}>
-          <p style={{ margin: '0 0 4px', fontSize: 12, fontWeight: 800, color: '#92400e', textTransform: 'uppercase', letterSpacing: 1 }}>The annual stake</p>
-          <p style={{ margin: '0 0 6px', fontSize: 36, fontWeight: 900, color: '#78350f', letterSpacing: -1 }}>{fmt(annual)}</p>
-          <p style={{ margin: 0, fontSize: 13, color: '#b45309', lineHeight: 1.5 }}>
+        <div style={{ background: 'linear-gradient(135deg, #FFF2E6, #FFE0C2)', borderRadius: 20, padding: '20px 22px' }}>
+          <p style={{ margin: '0 0 4px', fontSize: 12, fontWeight: 800, color: '#7A3200', textTransform: 'uppercase', letterSpacing: 1 }}>The annual stake</p>
+          <p style={{ margin: '0 0 6px', fontSize: 36, fontWeight: 900, color: '#5C2200', letterSpacing: -1 }}>{fmt(annual)}</p>
+          <p style={{ margin: 0, fontSize: 13, color: '#A04400', lineHeight: 1.5 }}>
             That's what continuing for a year costs. {annualComparison(annual)} — yours or theirs.
           </p>
         </div>
 
         {/* Next milestone */}
         {nextMilestone && (
-          <div style={{ background: 'linear-gradient(135deg, #f5f3ff, #ede9fe)', borderRadius: 20, padding: '20px 22px', border: `1px solid ${C.purple}30` }}>
+          <div style={{ background: 'linear-gradient(135deg, #E3EDF8, #C8DFF2)', borderRadius: 20, padding: '20px 22px', border: `1px solid ${C.purple}30` }}>
             <p style={{ margin: '0 0 4px', fontSize: 11, fontWeight: 800, color: C.purple, textTransform: 'uppercase', letterSpacing: 1 }}>Next milestone</p>
             <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
               <span style={{ fontSize: 40 }}>{nextMilestone.emoji}</span>
@@ -944,7 +945,7 @@ function ProgressScreen({ user }: { user: UserData }) {
                 </p>
               </div>
             </div>
-            <div style={{ marginTop: 14, height: 8, background: 'rgba(124,58,237,0.15)', borderRadius: 4, overflow: 'hidden' }}>
+            <div style={{ marginTop: 14, height: 8, background: 'rgba(0,48,135,0.15)', borderRadius: 4, overflow: 'hidden' }}>
               <div style={{
                 height: '100%',
                 width: `${Math.min(100, (cleanDays / nextMilestone.days) * 100)}%`,
@@ -965,7 +966,7 @@ function ProgressScreen({ user }: { user: UserData }) {
                 background: '#fff', borderRadius: 16, padding: '15px 18px',
                 display: 'flex', alignItems: 'center', gap: 14,
                 boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
-                border: '1px solid #ede9fe',
+                border: `1px solid ${C.border}`,
               }}>
                 <span style={{ fontSize: 34, lineHeight: 1 }}>{a.emoji}</span>
                 <div style={{ flex: 1 }}>
@@ -1044,10 +1045,11 @@ export default function ClarityApp() {
   return (
     <>
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
         input[type=range] { -webkit-appearance: none; appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-runnable-track { height: 5px; border-radius: 3px; background: linear-gradient(90deg, #7c3aed, #4f46e5); }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; background: #7c3aed; margin-top: -8.5px; box-shadow: 0 2px 8px rgba(124,58,237,0.4); cursor: grab; }
+        input[type=range]::-webkit-slider-runnable-track { height: 5px; border-radius: 3px; background: linear-gradient(90deg, #003087, #0066B2); }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; background: #003087; margin-top: -8.5px; box-shadow: 0 2px 8px rgba(0,48,135,0.4); cursor: grab; }
         * { -webkit-tap-highlight-color: transparent; }
         ::-webkit-scrollbar { display: none; }
       `}</style>
@@ -1055,9 +1057,9 @@ export default function ClarityApp() {
       {/* Page wrapper — covers the Lucille site entirely */}
       <div style={{
         position: 'fixed', inset: 0, zIndex: 9999,
-        background: 'radial-gradient(ellipse at 30% 20%, #2d0a5e 0%, #0d0d1a 45%, #071428 100%)',
+        background: 'radial-gradient(ellipse at 30% 20%, #001A5C 0%, #000820 50%, #000D1A 100%)',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif',
+        fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif',
       }}>
 
         {/* Side buttons (decorative) */}
@@ -1081,7 +1083,7 @@ export default function ClarityApp() {
             '0 0 0 1px rgba(255,255,255,0.12)',
             '0 0 0 2px rgba(0,0,0,0.8)',
             '0 40px 80px rgba(0,0,0,0.7)',
-            '0 0 60px rgba(124,58,237,0.15)',
+            '0 0 60px rgba(0,164,228,0.18)',
           ].join(', '),
           position: 'relative',
           flexShrink: 0,
