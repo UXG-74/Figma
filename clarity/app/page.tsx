@@ -1045,11 +1045,7 @@ export default function ClarityApp() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-        #clarity-root h1, #clarity-root h2, #clarity-root h3, #clarity-root h4 {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
         input[type=range] { -webkit-appearance: none; appearance: none; background: transparent; }
         input[type=range]::-webkit-slider-runnable-track { height: 5px; border-radius: 3px; background: linear-gradient(90deg, #003087, #0066B2); }
         input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; background: #003087; margin-top: -8.5px; box-shadow: 0 2px 8px rgba(0,48,135,0.4); cursor: grab; }
@@ -1057,21 +1053,21 @@ export default function ClarityApp() {
         ::-webkit-scrollbar { display: none; }
       `}</style>
 
-      {/* Page wrapper — covers the Lucille site entirely */}
-      <div id="clarity-root" style={{
-        position: 'fixed', inset: 0, zIndex: 9999,
+      {/* Page wrapper */}
+      <div style={{
+        minHeight: '100vh', padding: '20px 0',
         background: 'radial-gradient(ellipse at 30% 20%, #001A5C 0%, #000820 50%, #000D1A 100%)',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif',
+        fontFamily: 'var(--font-inter), Inter, -apple-system, BlinkMacSystemFont, sans-serif',
       }}>
 
         {/* Side buttons (decorative) */}
-        <div style={{ position: 'absolute', left: 'calc(50% - 210px)', top: '28%', display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ position: 'fixed', left: 'calc(50% - 210px)', top: '28%', display: 'flex', flexDirection: 'column', gap: 12 }}>
           {[44, 44, 44].map((h, i) => (
             <div key={i} style={{ width: 4, height: h, background: 'rgba(255,255,255,0.12)', borderRadius: 2, marginLeft: -2 }} />
           ))}
         </div>
-        <div style={{ position: 'absolute', left: 'calc(50% + 204px)', top: '34%' }}>
+        <div style={{ position: 'fixed', left: 'calc(50% + 204px)', top: '34%' }}>
           <div style={{ width: 4, height: 72, background: 'rgba(255,255,255,0.12)', borderRadius: 2, marginLeft: 0 }} />
         </div>
 
@@ -1115,7 +1111,7 @@ export default function ClarityApp() {
         </div>
 
         {/* App name below phone */}
-        <div style={{ position: 'absolute', bottom: 32, textAlign: 'center' }}>
+        <div style={{ position: 'fixed', bottom: 32, textAlign: 'center' }}>
           <p style={{ margin: 0, fontSize: 13, color: 'rgba(255,255,255,0.25)', letterSpacing: 2, textTransform: 'uppercase', fontWeight: 600 }}>
             Clarity · iPhone 17 Pro Max
           </p>
